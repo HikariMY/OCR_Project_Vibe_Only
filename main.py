@@ -147,7 +147,9 @@ class ScreenshotOverlay(tk.Toplevel):
         self.rect = None
 
         self.overrideredirect(True)
-        self.attributes("-fullscreen", True)
+        sw = self.winfo_screenwidth()
+        sh = self.winfo_screenheight()
+        self.geometry(f"{sw}x{sh}+0+0")
         self.attributes("-alpha", 0.25)
         self.attributes("-topmost", True)
         self.configure(bg="black")
